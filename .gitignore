@@ -1,0 +1,4 @@
+*.exe
+models
+*.dll
+output.jpg
