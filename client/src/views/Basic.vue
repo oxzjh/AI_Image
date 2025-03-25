@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="box right">
-            <RouterLink to="/sd">文生图，图生图➜</RouterLink>
+            <RouterLink to="/sd">文生图、图生图➜</RouterLink>
             <Image :src="generateURL" />
             <!-- <ElButton :disabled="generateURL == ''" @click="onDownload">下载</ElButton> -->
         </div>

@@ -11,6 +11,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"runtime"
 	"strings"
 
 	_ "golang.org/x/image/bmp"
@@ -41,7 +42,7 @@ func main() {
 	flag.StringVar(&mParams.ModelPath, "m", "", "Model path")
 	flag.StringVar(&mParams.TaesdPath, "taesd", "", "Taesd model path")
 	flag.StringVar(&mParams.LoraModelDir, "lora-dir", "", "Lora models dir")
-	flag.IntVar(&mParams.NumThreads, "t", 4, "Number of threads")
+	flag.IntVar(&mParams.NumThreads, "t", runtime.NumCPU(), "Number of threads")
 	flag.StringVar(&params.Prompt, "p", "", "Prompt")
 	flag.StringVar(&params.NegativePrompt, "n", "", "Negative prompt")
 	flag.Float64Var(&cfgScale, "cfg-scale", 1, "Unconditional guidance scale")
