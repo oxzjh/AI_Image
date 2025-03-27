@@ -1,9 +1,9 @@
 import Basic from "@/views/Basic.vue";
 import SD from "@/views/SD.vue";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 export default createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',

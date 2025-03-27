@@ -5,19 +5,12 @@
                 <Picture></Picture>
             </ElIcon>
         </template>
-        <template #viewer>
-            <ElLink>
-                <ElIcon>
-                    <Download />
-                </ElIcon>
-            </ElLink>
-        </template>
     </ElImage>
 </template>
 
 <script setup>
-import { ElIcon, ElImage, ElLink } from 'element-plus';
-import { Download, Picture } from '@element-plus/icons-vue';
+import { ElIcon, ElImage } from 'element-plus';
+import { Picture } from '@element-plus/icons-vue';
 
 defineProps(["src"])
 </script>

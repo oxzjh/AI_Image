@@ -2,7 +2,7 @@
     <div class="flex">
         <div class="box">
             <input type="file" accept=".jpg,.jpeg,.png,.webp,.tif,.tiff" @change="onChange">
-            <Image ref="source" :src="imageURL" />
+            <Image :src="imageURL" />
             <div class="flex">
                 <ElSelect v-model="handler" class="option">
                     <ElOptionGroup v-for="item in data" :label="item.label" :key="item.id">
@@ -17,19 +17,19 @@
         </div>
         <div class="box right">
             <RouterLink to="/sd">文生图、图生图➜</RouterLink>
-            <Image :src="generateURL" />
-            <!-- <ElButton :disabled="generateURL == ''" @click="onDownload">下载</ElButton> -->
+            <!-- <Image :src="generateURL" /> -->
+            <ImageView :src="generateURL" :list="[generateURL]" />
         </div>
     </div>
 </template>
 
 <script setup>
 import Image from '@/components/Image.vue'
+import ImageView from '@/components/ImageView.vue';
 import { getURL, post } from '@/request'
 import { ElButton, ElCheckbox, ElOption, ElOptionGroup, ElSelect } from 'element-plus';
 import { ref } from 'vue';
 
-const source = ref()
 const imageURL = ref("")
 const generateURL = ref("")
 const handler = ref("")
@@ -87,8 +87,7 @@ function onGenerate() {
         data.style = handler.value
     }
     post(route, data, () => {
-        generateURL.value = getURL("/image/download?"+Date.now())
-        console.log(generateURL.value)
+        generateURL.value = getURL("/image/download?" + Date.now())
     })
 }
 

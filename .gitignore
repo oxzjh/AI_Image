@@ -2,3 +2,5 @@
 models
 *.dll
 output.jpg
+release/dist
+*.zip

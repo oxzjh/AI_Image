@@ -29,3 +29,13 @@ export default class {
         return this.post(route, "", data)
     }
 }
+
+export function getBlob(url, callback) {
+    const request = new XMLHttpRequest()
+    request.open("GET", url, true)
+    request.responseType = "blob"
+    request.onload = function (e) {
+        callback(e.target.response)
+    }
+    request.send()
+}

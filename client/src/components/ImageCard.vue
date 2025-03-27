@@ -1,6 +1,7 @@
 <template>
     <ElUpload :class="{ 'eluploadlimited': limited }" accept=".jpg,.jpeg.png,.webp,.tif,.tiff" list-type="picture-card"
         :auto-upload="false" :on-preview="onPreview" :on-change="onChange" :limit="1" :on-remove="onRemove">
+        <slot></slot>
     </ElUpload>
     <ElDialog v-model="previewVisible" width="80%">
         <ElImage :src="previewImageURL" />
@@ -32,6 +33,7 @@ function onChange(file, fileList) {
 }
 
 function onRemove() {
+    _file = null
     limited.value = false
 }
 
