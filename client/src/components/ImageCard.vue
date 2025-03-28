@@ -1,5 +1,5 @@
 <template>
-    <ElUpload :class="{ 'eluploadlimited': limited }" accept=".jpg,.jpeg.png,.webp,.tif,.tiff" list-type="picture-card"
+    <ElUpload :class="{ 'eluploadlimited': limited }" accept=".jpg,.jpeg,.png,.webp,.tif,.tiff" list-type="picture-card"
         :auto-upload="false" :on-preview="onPreview" :on-change="onChange" :limit="1" :on-remove="onRemove">
         <slot></slot>
     </ElUpload>
