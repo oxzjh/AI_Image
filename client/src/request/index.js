@@ -1,4 +1,4 @@
-import { ElLoading, ElMessage, resultProps } from 'element-plus'
+import { ElLoading, ElMessage } from 'element-plus'
 import HTTP from './http'
 
 const http = new HTTP('http://127.0.0.1:3000')
