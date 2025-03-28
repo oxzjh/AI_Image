@@ -60,7 +60,6 @@ func main() {
 		log.Fatal(err)
 	}
 	defer l2.Close()
-	fmt.Println(port2)
 	c.Load(fmt.Sprintf("http://127.0.0.1:%d/dist", port2))
 	c.DisableContextMenu()
 	c.DisableDevTools()
